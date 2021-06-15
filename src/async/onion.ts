@@ -1,8 +1,10 @@
 /**
  * @author WMXPY
- * @namespace Onion
- * @description Async
+ * @namespace Onion_Async
+ * @description Onion
  */
+
+import { AsyncLayer } from "./layer";
 
 export class AsyncOnion {
 
@@ -11,7 +13,10 @@ export class AsyncOnion {
         return new AsyncOnion();
     }
 
+    private readonly _layers: AsyncLayer[];
+
     private constructor() {
 
+        this._layers = [];
     }
 }
