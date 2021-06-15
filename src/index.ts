@@ -3,3 +3,5 @@
  * @namespace Onion
  * @description Index
  */
+
+export * from "./async";
