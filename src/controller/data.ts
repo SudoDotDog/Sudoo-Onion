@@ -17,4 +17,14 @@ export class OnionDataController<T> {
 
         this._data = initialData;
     }
+
+    public get data(): T {
+        return this._data;
+    }
+
+    public replace(newData: T): this {
+
+        this._data = newData;
+        return this;
+    }
 }
