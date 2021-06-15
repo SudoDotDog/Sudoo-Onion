@@ -4,4 +4,10 @@
  * @description Declare
  */
 
-export type AsyncResolver<T> = (data: T) => (data: T) => T;
+import { OnionDataController } from "../controller/data";
+
+export type AsyncResolver<T> = (
+    data: OnionDataController<T>,
+) => Promise<(
+    data: OnionDataController<T>,
+) => any>;
