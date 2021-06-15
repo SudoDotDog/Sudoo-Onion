@@ -5,9 +5,12 @@
  */
 
 import { OnionDataController } from "../controller/data";
+import { OnionProcedureController } from "../controller/procedure";
 
 export type AsyncResolver<T> = (
-    data: OnionDataController<T>,
+    dataController: OnionDataController<T>,
+    procedureController: OnionProcedureController<T>,
 ) => Promise<(
-    data: OnionDataController<T>,
+    dataController: OnionDataController<T>,
+    procedureController: OnionProcedureController<T>,
 ) => any>;
