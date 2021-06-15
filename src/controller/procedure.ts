@@ -4,7 +4,8 @@
  * @description Procedure
  */
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { ProcedureRecord } from "./declare";
+
 export class OnionProcedureController<T> {
 
     public static create<T>(): OnionProcedureController<T> {
@@ -12,7 +13,7 @@ export class OnionProcedureController<T> {
         return new OnionProcedureController<T>();
     }
 
-    public readonly _records: any[];
+    public readonly _records: Array<ProcedureRecord<T>>;
 
     private constructor() {
 
