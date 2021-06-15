@@ -4,27 +4,27 @@
  * @description Declare
  */
 
-export type ProcedureRecord<T> = {
-
-    readonly layerId: string;
-} & ({
+type ProcedureInRecord<T> = {
 
     readonly in: false;
-    readonly out: false;
 } | {
 
     readonly in: true;
     readonly beforeIn: T;
     readonly afterIn: T;
+};
+
+type ProcedureOutRecord<T> = {
 
     readonly out: false;
 } | {
-
-    readonly in: true;
-    readonly beforeIn: T;
-    readonly afterIn: T;
 
     readonly out: true;
     readonly beforeOut: T;
     readonly afterOut: T;
-});
+};
+
+export type ProcedureRecord<T> = {
+
+    readonly layerId: string;
+} & ProcedureInRecord<T> & ProcedureOutRecord<T>;
