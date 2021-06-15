@@ -7,12 +7,20 @@
 export type ProcedureRecord<T> = {
 
     readonly layerId: string;
+} & ({
 
-    readonly beforeIn?: T;
-    readonly inExecuted: boolean;
-    readonly afterIn?: T;
+    readonly in: true;
+    readonly beforeIn: T;
+    readonly afterIn: T;
 
-    readonly beforeOut?: T;
-    readonly outExecuted: boolean;
-    readonly afterOut?: T;
-};
+    readonly out: false;
+} | {
+
+    readonly in: true;
+    readonly beforeIn: T;
+    readonly afterIn: T;
+
+    readonly out: false;
+    readonly beforeOut: T;
+    readonly afterOut: T;
+});
